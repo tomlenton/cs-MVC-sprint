@@ -8,12 +8,14 @@ namespace cs_MVC_sprint.Services
     {
         List<Author> GetAllAuthors();
         Author GetAuthorById(int id);
+
+        Author AddAuthor(Author author);
     }
     public class AuthorService : IAuthorService
     {
 
-        public AuthorModel _authorModel;
-        public AuthorService (AuthorModel authorModel)
+        public IAuthorModel _authorModel;
+        public AuthorService (IAuthorModel authorModel)
         {
             _authorModel = authorModel;
         }
@@ -24,6 +26,10 @@ namespace cs_MVC_sprint.Services
         public Author GetAuthorById(int id)
         {
             return _authorModel.GetAuthorById(id);
+        }
+        public Author AddAuthor(Author author)
+        {
+            return _authorModel.AddAuthor(author);
         }
     }
 }
