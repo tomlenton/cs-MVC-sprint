@@ -1,3 +1,6 @@
+using cs_MVC_sprint.Models;
+using cs_MVC_sprint.Services;
+
 namespace cs_MVC_sprint
 {
     public class Program
@@ -9,6 +12,9 @@ namespace cs_MVC_sprint
             builder.Services.AddControllers();
 
             var app = builder.Build();
+
+            builder.Services.AddScoped<AuthorService>();
+            builder.Services.AddScoped<Author>();
 
             app.UseRouting();
 
